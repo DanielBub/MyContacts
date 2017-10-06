@@ -1,5 +1,7 @@
 <!-- component template -->
+<script src="jquery-3.2.1.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
+
 
 
 <script type="text/x-template" id="grid-template">
@@ -36,8 +38,8 @@
             :filter-key="searchQuery">
     </grid>
     New contact:<br>
-    <input name="contactName" v-model="contact_name">
-    <input name="contactNumber" v-model="contact_number">
+    <input id="name" name="contactName" v-model="contact_name">
+    <input id="number" name="contactNumber" v-model="contact_number">
     <button v-on:click="push()">+</button>
 </div>
 

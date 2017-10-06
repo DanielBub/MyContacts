@@ -84,7 +84,7 @@ function sendContactToServer(name,number) {
     alert(JSON.stringify(userObj));
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status === 500) {
-            alert("Connection error to server.");
+            alert("name or phone number already exist.");
         }
     };
     request.open("POST", server_prefix + path, true);

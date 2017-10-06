@@ -11,13 +11,28 @@ app.use(bodyParser.json());
 app.set('port', (defaultPort));
 
 app.post('/addContact', function(req,res) {
-    addContact(req.body.name, req.body.number);
+    MongoClient.connect(uri, function(err, db) {
+        if (err) throw err;
+        var contact = { name: req.body.name, number: req.body.number};
+        db.collection("contacts").insertOne(contact, function(err) {
+            if (err) {
+                if (err.code == "11000") {
+                    res.status(500).send("duplicate");
+                }
+                else throw err;
+            }
+            console.log(JSON.stringify(contact));
+            db.close();
+        });
+    });
+
 });
 
 app.get('/allContacts', function(req,res) {
     MongoClient.connect(uri, function (err, db) {
         if (err) throw err;
         db.collection("contacts").find({}).toArray(function (err, result) {
+            db.collection("contacts").ensureIndex()
             if (err) throw err;
             res.status(200).json(result);
             db.close();
@@ -34,17 +49,5 @@ app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
 
-
-function addContact(name,number) {
-    MongoClient.connect(uri, function(err, db) {
-        if (err) throw err;
-        var contact = { name: name, number: number };
-        db.collection("contacts").insertOne(contact, function(err) {
-            if (err) throw err;
-            console.log(JSON.stringify(contact));
-            db.close();
-        });
-    });
-}
 
 
