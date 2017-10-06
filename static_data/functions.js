@@ -93,7 +93,6 @@ function sendContactToServer(name,number) {
 }
 
 function getAllContactsFromServer() {
-    alert("hey");
     var path = "/allContacts";
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -115,4 +114,6 @@ function presentContacts(contactArray) {
     contactArray.forEach(function (contact) {
         demo.gridData.push({name : contact['name'], number : contact['number']})
     })
+    document.getElementById("preload").style.display = "none";
+    document.getElementById("demo").style.display = "block";
 }

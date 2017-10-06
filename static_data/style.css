@@ -46,14 +46,23 @@ th.active .arrow {
     opacity: 0.66;
 }
 
-.arrow.asc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 4px solid #fff;
+
+
+#demo {
+    margin: auto;
+    height: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    display: none;
 }
 
-.arrow.dsc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #fff;
+#preload {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
