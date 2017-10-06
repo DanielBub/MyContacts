@@ -70,6 +70,8 @@ var demo = new Vue({
         push : function() {
             sendContactToServer(this.contact_name,this.contact_number);
             this.gridData.push({name : this.contact_name, number: this.contact_number})
+            this.contact_name = '';
+            this.contact_number = '';
         }
     }
 })
@@ -81,7 +83,6 @@ function sendContactToServer(name,number) {
         name: name,
         number: number
     };
-    alert(JSON.stringify(userObj));
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status === 500) {
             alert("name or phone number already exist.");
