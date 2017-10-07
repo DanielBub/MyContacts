@@ -41,17 +41,6 @@ Vue.component('grid', {
             return data
         }
     },
-    filters: {
-        capitalize: function (str) {
-            return str.charAt(0).toUpperCase() + str.slice(1)
-        }
-    },
-    methods: {
-        sortBy: function (key) {
-            this.sortKey = key
-            this.sortOrders[key] = this.sortOrders[key] * -1
-        }
-    }
 })
 
 // bootstrap the demo
@@ -76,7 +65,7 @@ var demo = new Vue({
 })
 
 function sendContactToServer(name,number, object) {
-    var path = "/addContact";
+    var path = "/contacts";
     var request = new XMLHttpRequest();
     var userObj = {
         name: name,
@@ -95,7 +84,7 @@ function sendContactToServer(name,number, object) {
 }
 
 function getAllContactsFromServer() {
-    var path = "/allContacts";
+    var path = "/contacts";
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {

@@ -5,8 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/functions.js" afterPath="$PROJECT_DIR$/static_data/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/index.html" afterPath="$PROJECT_DIR$/static_data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/style.css" afterPath="$PROJECT_DIR$/static_data/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,28 +21,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static_data/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
+            <state relative-caret-position="-357">
               <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="-40">
+              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static_data/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="275">
+              <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -85,9 +83,9 @@
       <find>&quot;Hey</find>
       <find>$</find>
       <find>main</find>
-      <find>here</find>
       <find>overflow</find>
       <find>sendContactToS</find>
+      <find>here</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,8 +102,8 @@
         <option value="$PROJECT_DIR$/static_data/server.js" />
         <option value="$PROJECT_DIR$/static_data/index.html" />
         <option value="$PROJECT_DIR$/static_data/style.css" />
-        <option value="$PROJECT_DIR$/static_data/functions.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/static_data/functions.js" />
       </list>
     </option>
   </component>
@@ -203,7 +201,7 @@
       <workItem from="1507042216657" duration="5420000" />
       <workItem from="1507199758337" duration="122000" />
       <workItem from="1507293242334" duration="781000" />
-      <workItem from="1507294031451" duration="17784000" />
+      <workItem from="1507294031451" duration="18235000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1507299631967</created>
@@ -233,11 +231,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507308383073</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Done(?)">
+      <created>1507377792588</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1507377792588</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24107000" />
+    <option name="totallyTimeSpent" value="24558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -373,9 +378,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static_data/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
+        <state relative-caret-position="-357">
           <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
           <folding />
         </state>
@@ -383,16 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static_data/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="275">
+          <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
           <folding />
         </state>
       </provider>

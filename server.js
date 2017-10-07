@@ -10,7 +10,7 @@ app.use(express.static('static_data'));
 app.use(bodyParser.json());
 app.set('port', (defaultPort));
 
-app.post('/addContact', function(req,res) {
+app.post('/contacts', function(req,res) {
     MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
         var contact = { name: req.body.name, number: req.body.number};
@@ -29,7 +29,7 @@ app.post('/addContact', function(req,res) {
 
 });
 
-app.get('/allContacts', function(req,res) {
+app.get('/contacts', function(req,res) {
     MongoClient.connect(uri, function (err, db) {
         if (err) throw err;
         db.collection("contacts").find({}).toArray(function (err, result) {
