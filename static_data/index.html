@@ -1,9 +1,10 @@
 <!-- component template -->
-<script src="jquery-3.2.1.min.js"></script>
+
+
+<html>
 <script src="https://unpkg.com/vue"></script>
-
-
-
+<head><link rel="stylesheet"  href="style.css"></head>
+<body>
 <script type="text/x-template" id="grid-template">
 
     <table>
@@ -27,21 +28,32 @@
 
 <div id="preload"></div>
 <div id="main">
-    <form id="search" class="app_component">
-        Search <input name="query" v-model="searchQuery">
-    </form>
+    <div id="container">
+        <input id= "searchInput" name="query" placeholder="Search..." v-model="searchQuery">
+        <a class="button" href="#popup">+</a>
+    </div>
+    <br>
     <grid class="app_component"
             :data="gridData"
             :columns="gridColumns"
             :filter-key="searchQuery">
     </grid>
-    <span class="app_component">New contact:<br></span>
+    <div id="popup" class="overlay">
+        <div class="popup">
+            Name: <br>
     <input class="app_component" id="name" name="contactName" v-model="contact_name">
-    <input id="number" name="contactNumber" v-model="contact_number">
-    <button v-on:click="push()">+</button>
+    <br><br> Number: <br>
+            <input id="number" name="contactNumber" v-model="contact_number">
+            <a class="close" href="#">
+                <button class="button" v-on:click="push()">+</button>
+                &times;
+            </a>
+        </div>
+    </div>
 </div>
-
-
-
+</body>
 <script src="functions.js"></script>
-<link rel="stylesheet"  href="style.css">
+</html>
+
+
+

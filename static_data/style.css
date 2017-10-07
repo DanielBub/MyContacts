@@ -8,46 +8,47 @@ table {
     border: 2px solid #42b983;
     border-radius: 3px;
     background-color: #fff;
-
+    width: 100%;
 }
 
 table tbody {
-    display: block;
+    /*display: block;*/
     overflow-y: auto;
-    width: 350px;
-    max-height: 400px;
+    /*width: 350px;*/
+    max-height: 80vh;
 }
 
 th {
-    display: inline-block;
     background-color: #42b983;
     color: rgba(255,255,255,0.66);
-    /*cursor: pointer;*/
 }
 
+#searchInput {
+    width: 90%;
+}
+
+#container {
+    width: 100vw;
+}
 td {
+    /*display: inline-block;*/
     background-color: #f9f9f9;
-}
-
-th, td {
-    min-width: 120px;
+    min-width: 100%;
     padding: 10px 20px;
 }
 
 
 #main {
-    margin: auto;
     height: auto;
-    width: 50%;
-    border: 3px solid green;
+    width: 99%;
     padding: 10px;
     display: none;
-    position: relative;
+    /*position: relative;*/
     top: 5%;
 }
 
 .app_component {
-    margin-left: 25%;
+    /*margin-left: 25%;*/
 }
 
 #preload {
@@ -58,4 +59,95 @@ th, td {
     height: 100%;
     z-index: 9999;
     background: url(images/Preloader_4.gif) center no-repeat #fff;
+}
+
+.button {
+    font-size: 1em;
+    padding: 5px;
+    color: #fff;
+    border: 1px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s ease-out;
+    min-width: 5%;
+}
+.button:hover {
+    background: #06D85F;
+}
+
+.button {
+    /*-webkit-border-radius: 28;*/
+    /*-moz-border-radius: 28;*/
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 22px;
+    background: #3fa132;
+    padding: 1vh 1vw  1vh  1vw ;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #8ba2b0;
+    text-decoration: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+    .box{
+        width: 70%;
+    }
+    .popup{
+        width: 70%;
+    }
 }
