@@ -14,7 +14,7 @@ Vue.component('grid', {
             sortOrders[key] = 1
         })
         return {
-            sortKey: '',
+            sortKey: 'name',
             sortOrders: sortOrders
         }
     },
@@ -33,8 +33,8 @@ Vue.component('grid', {
             }
             if (sortKey) {
                 data = data.slice().sort(function (a, b) {
-                    a = a[sortKey]
-                    b = b[sortKey]
+                    a = a[sortKey].toLowerCase()
+                    b = b[sortKey].toLowerCase()
                     return (a === b ? 0 : a > b ? 1 : -1) * order
                 })
             }
@@ -56,7 +56,7 @@ Vue.component('grid', {
 
 // bootstrap the demo
 var demo = new Vue({
-    el: '#demo',
+    el: '#main',
     data: {
         searchQuery: '',
         contact_name: '',
@@ -68,15 +68,14 @@ var demo = new Vue({
     },
     methods: {
         push : function() {
-            sendContactToServer(this.contact_name,this.contact_number);
-            this.gridData.push({name : this.contact_name, number: this.contact_number})
+            sendContactToServer(this.contact_name,this.contact_number, this);
             this.contact_name = '';
             this.contact_number = '';
         }
     }
 })
 
-function sendContactToServer(name,number) {
+function sendContactToServer(name,number, object) {
     var path = "/addContact";
     var request = new XMLHttpRequest();
     var userObj = {
@@ -86,6 +85,8 @@ function sendContactToServer(name,number) {
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status === 500) {
             alert("name or phone number already exist.");
+        } else if (this.readyState == 4 && this.status == 200) {
+            object.gridData.push({name : name , number: number})
         }
     };
     request.open("POST", server_prefix + path, true);
@@ -108,7 +109,6 @@ function getAllContactsFromServer() {
     request.send();
 }
 
-getAllContactsFromServer();
 
 function presentContacts(contactArray) {
     contactArray = JSON.parse(contactArray);
@@ -116,5 +116,7 @@ function presentContacts(contactArray) {
         demo.gridData.push({name : contact['name'], number : contact['number']})
     })
     document.getElementById("preload").style.display = "none";
-    document.getElementById("demo").style.display = "block";
+    document.getElementById("main").style.display = "block";
 }
+
+getAllContactsFromServer();

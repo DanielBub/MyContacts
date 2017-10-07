@@ -16,13 +16,14 @@ app.post('/addContact', function(req,res) {
         var contact = { name: req.body.name, number: req.body.number};
         db.collection("contacts").insertOne(contact, function(err) {
             if (err) {
-                if (err.code == "11000") {
+                if (err.code === 11000) {
                     res.status(500).send("duplicate");
                 }
                 else throw err;
             }
             console.log(JSON.stringify(contact));
             db.close();
+            res.status(200).send();
         });
     });
 
