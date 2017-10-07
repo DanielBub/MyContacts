@@ -1,0 +1,24 @@
+{
+  "name": "mycontacts",
+  "version": "1.0.0",
+  "description": "My contacts App!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielBub/MyCntacts.git"
+  },
+  "author": "Bublil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielBub/Eventspp/issues"
+  },
+  "homepage": "https://github.com/DanielBub/Eventspp#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  }
+}
