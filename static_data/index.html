@@ -32,12 +32,12 @@
 
 <div id="preload"></div>
 <div id="main">
-    <div id="container">
+    <div id="searchAndAddContainer">
         <input id= "searchInput" name="query" placeholder="Search..." v-model="searchQuery">
         <a class="button" href="#popup">+</a>
     </div>
     <br>
-    <grid class="app_component"
+    <grid
             :data="gridData"
             :columns="gridColumns"
             :filter-key="searchQuery">
@@ -45,7 +45,7 @@
     <div id="popup" class="overlay">
         <div class="popup">
             Name: <br>
-    <input class="app_component" id="name" name="contactName" v-model="contact_name">
+    <input id="name" name="contactName" v-model="contact_name">
     <br><br> Number: <br>
             <input id="number" type='tel' name="contactNumber" v-model="contact_number">
             <a class="close" href="#">
