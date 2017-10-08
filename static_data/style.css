@@ -30,7 +30,7 @@ td {
 
 #searchInput {
     width: 90%;
-    font-size: 8vh;
+    font-size: 26pt;
 }
 
 #searchAndAddContainer {
@@ -62,6 +62,17 @@ td {
     background: url(images/Preloader_4.gif) center no-repeat #fff;
 }
 
+.button {
+    font-size: 1em;
+    padding: 5px;
+    color: #fff;
+    border: 1px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s ease-out;
+    min-width: 5%;
+}
 
 
 .button {
@@ -70,9 +81,8 @@ td {
     color: #ffffff;
     font-size: 22px;
     background: #3fa132;
-    padding: 1.5vh 1.5vw  1.5vh  1.5vw ;
+    padding: 1vh 1vw  1vh  1vw ;
     text-decoration: none;
-    size: 8vh;
 }
 
 .button:hover {

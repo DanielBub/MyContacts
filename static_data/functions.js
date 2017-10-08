@@ -1,5 +1,6 @@
 var server_prefix = "http://mycontacts101.azurewebsites.net";
 
+
 Vue.component('grid', {
     template: '#grid-template',
     props: {
