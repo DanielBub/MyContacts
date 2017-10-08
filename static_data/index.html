@@ -1,22 +1,19 @@
-<!-- component template -->
-
-
 <html>
-
 <head>
     <title>MyContacts</title>
     <link rel="stylesheet"  href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="libs/vue.min.js"></script>
     <link rel="icon" href="images/icon.png">
 </head>
 <body>
-<script src="libs/vue.min.js"></script>
 <script type="text/x-template" id="grid-template">
 
-    <table>
+    <table id="table">
         <thead>
-            <th v-for="key in columns">
-                {{ key | capitalize }}
-            </th>
+        <th v-for="key in columns">
+            {{ key | capitalize }}
+        </th>
         </thead>
         <tbody>
         <tr v-for="entry in filteredData">
@@ -28,25 +25,26 @@
     </table>
 </script>
 
-<!-- demo root element -->
 
-<div id="preload"></div>
+
 <div id="main">
     <div id="searchAndAddContainer">
         <input id= "searchInput" name="query" placeholder="Search..." v-model="searchQuery">
         <a class="button" href="#popup">+</a>
     </div>
     <br>
-    <grid
-            :data="gridData"
-            :columns="gridColumns"
-            :filter-key="searchQuery">
-    </grid>
+    <div id="grid">
+        <grid
+                :data="gridData"
+                :columns="gridColumns"
+                :filter-key="searchQuery">
+        </grid>
+    </div>
     <div id="popup" class="overlay">
         <div class="popup">
             Name: <br>
-    <input id="name" name="contactName" v-model="contact_name">
-    <br><br> Number: <br>
+            <input id="name" name="contactName" v-model="contact_name">
+            <br> <br> Number: <br>
             <input id="number" type='tel' name="contactNumber" v-model="contact_number">
             <a class="close" href="#">
                 <button class="button" v-on:click="push()">+</button>
@@ -55,8 +53,9 @@
         </div>
     </div>
 </div>
-</body>
+<div id="preload"></div>
 
+</body>
 
 <script src="functions.js"></script>
 </html>

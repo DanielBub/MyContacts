@@ -47,10 +47,9 @@ Vue.component('grid', {
             return str.charAt(0).toUpperCase() + str.slice(1)
         }
     }
-})
+});
 
-// bootstrap the demo
-var demo = new Vue({
+var gridVue = new Vue({
     el: '#main',
     data: {
         searchQuery: '',
@@ -76,9 +75,9 @@ var demo = new Vue({
             }
         }
     }
-})
+});
 
-function sendContactToServer(name,number, object) {
+function sendContactToServer(name,number, grid) {
         var path = "/contacts";
         var request = new XMLHttpRequest();
         var userObj = {
@@ -86,10 +85,21 @@ function sendContactToServer(name,number, object) {
             number: number
         };
         request.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status === 500) {
-                alert("name or phone number already exist.");
-            } else if (this.readyState == 4 && this.status == 200) {
-                object.gridData.push({name: name, number: number});
+            if (this.readyState === 4) {
+                switch (this.status) {
+                    case 200:
+                        grid.gridData.push({name: name, number: number});
+                        break;
+                    case 400:
+                        alert("Oops.. error in databse.");
+                        break;
+                    case 500:
+                        alert("name or phone number already exist.");
+                        break;
+                    default:
+                        alert("Unkonwn error code..");
+                        break;
+                }
             }
         };
         request.open("POST", server_prefix + path, true);
@@ -104,7 +114,7 @@ function getAllContactsFromServer() {
         if (this.readyState === 4 && this.status === 200) {
             presentContacts(this.responseText);
         }
-        if (this.readyState == 4 && this.status === 500) {
+        if (this.readyState === 4 && this.status === 500) {
             alert("Connection error to server.");
         }
     };
@@ -116,8 +126,8 @@ function getAllContactsFromServer() {
 function presentContacts(contactArray) {
     contactArray = JSON.parse(contactArray);
     contactArray.forEach(function (contact) {
-        demo.gridData.push({name : contact['name'], number : contact['number']})
-    })
+        gridVue.gridData.push({name : contact['name'], number : contact['number']})
+    });
     document.getElementById("preload").style.display = "none";
     document.getElementById("main").style.display = "block";
 }

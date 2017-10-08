@@ -13,9 +13,7 @@ table {
 }
 
 table tbody {
-    /*display: block;*/
     overflow-y: auto;
-    /*width: 350px;*/
     max-height: 80vh;
 }
 
@@ -25,7 +23,6 @@ th {
 }
 
 td {
-    /*display: inline-block;*/
     background-color: #f9f9f9;
     min-width: 100%;
     padding: 10px 20px;
@@ -47,6 +44,11 @@ td {
     padding: 10px;
     display: none;
     top: 5%;
+}
+
+#grid {
+    overflow-y: auto;
+    max-height: 100vh;
 }
 
 
@@ -71,9 +73,7 @@ td {
     transition: all 0.7s ease-out;
     min-width: 5%;
 }
-.button:hover {
-    background: #06D85F;
-}
+
 
 .button {
     border-radius: 28px;

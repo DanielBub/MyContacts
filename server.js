@@ -20,7 +20,7 @@ app.post('/contacts', function(req,res) {
                     if (err.code === 11000) {
                         res.status(500).send("duplicate");
                     }
-                    else res.status(500).send("error");
+                    else res.status(400).send("error at db connection");
                 }
                 res.status(200).send();
                 db.close();
@@ -38,7 +38,7 @@ app.get('/contacts', function(req,res) {
             if (err) throw err;
             db.collection("contacts").find({}).toArray(function (err, result) {
                 if (err) throw err;
-                res.status(200).json(result)
+                res.status(200).json(result);
                 db.close();
             })
         });
