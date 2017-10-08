@@ -135,3 +135,4 @@ function presentContacts(contactArray) {
 }
 
 getAllContactsFromServer();
+
