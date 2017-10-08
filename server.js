@@ -11,34 +11,41 @@ app.use(bodyParser.json());
 app.set('port', (defaultPort));
 
 app.post('/contacts', function(req,res) {
-    MongoClient.connect(uri, function(err, db) {
-        if (err) throw err;
-        var contact = { name: req.body.name, number: req.body.number};
-        db.collection("contacts").insertOne(contact, function(err) {
-            if (err) {
-                if (err.code === 11000) {
-                    res.status(500).send("duplicate");
+    try {
+        MongoClient.connect(uri, function (err, db) {
+            if (err) throw err;
+            var contact = {name: req.body.name, number: req.body.number};
+            db.collection("contacts").insertOne(contact, function (err) {
+                if (err) {
+                    if (err.code === 11000) {
+                        res.status(500).send("duplicate");
+                    }
+                    else res.status(500).send("error");
                 }
-                else throw err;
-            }
-            console.log(JSON.stringify(contact));
-            db.close();
-            res.status(200).send();
+                console.log(JSON.stringify(contact));
+                res.status(200).send();
+                db.close();
+            });
         });
-    });
+    } catch(err) {
+        console.log(err);
+    }
 
 });
 
 app.get('/contacts', function(req,res) {
-    MongoClient.connect(uri, function (err, db) {
-        if (err) throw err;
-        db.collection("contacts").find({}).toArray(function (err, result) {
-            db.collection("contacts").ensureIndex()
+    try {
+        MongoClient.connect(uri, function (err, db) {
             if (err) throw err;
-            res.status(200).json(result);
-            db.close();
+            db.collection("contacts").find({}).toArray(function (err, result) {
+                if (err) throw err;
+                res.status(200).json(result)
+                db.close();
+            })
         });
-    });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 

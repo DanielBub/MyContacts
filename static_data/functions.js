@@ -1,4 +1,5 @@
 var server_prefix = "http://localhost:5000";
+var server_prefix = "http://mycontacts101.azurewebsites.net"
 
 // register the grid component
 Vue.component('grid', {
@@ -20,25 +21,27 @@ Vue.component('grid', {
     },
     computed: {
         filteredData: function () {
-            var sortKey = this.sortKey
-            var filterKey = this.filterKey && this.filterKey.toLowerCase()
-            var order = this.sortOrders[sortKey] || 1
-            var data = this.data
-            if (filterKey) {
-                data = data.filter(function (row) {
-                    return Object.keys(row).some(function (key) {
-                        return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+            try {
+                var sortKey = this.sortKey
+                var filterKey = this.filterKey
+                var order = this.sortOrders[sortKey] || 1
+                var data = this.data
+                if (filterKey) {
+                    data = data.filter(function (row) {
+                        return Object.keys(row).some(function (key) {
+                            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                        })
                     })
-                })
-            }
-            if (sortKey) {
-                data = data.slice().sort(function (a, b) {
-                    a = a[sortKey].toLowerCase()
-                    b = b[sortKey].toLowerCase()
-                    return (a === b ? 0 : a > b ? 1 : -1) * order
-                })
-            }
-            return data
+                }
+                if (sortKey) {
+                    data = data.slice().sort(function (a, b) {
+                        a = a[sortKey].toLowerCase()
+                        b = b[sortKey].toLowerCase()
+                        return (a === b ? 0 : a > b ? 1 : -1) * order
+                    })
+                }
+                return data
+            } catch (err) { alert(err)}
         }
     },
     filters: {
@@ -62,30 +65,38 @@ var demo = new Vue({
     },
     methods: {
         push : function() {
-            sendContactToServer(this.contact_name,this.contact_number, this);
-            this.contact_name = '';
-            this.contact_number = '';
+            try {
+                if (this.contact_name === '' || this.contact_number === '') {
+                    alert("Input data please.")
+                } else {
+                    sendContactToServer(this.contact_name, this.contact_number, this);
+                    this.contact_name = '';
+                    this.contact_number = '';
+                }
+            } catch (err) {
+                alert(err);
+            }
         }
     }
 })
 
 function sendContactToServer(name,number, object) {
-    var path = "/contacts";
-    var request = new XMLHttpRequest();
-    var userObj = {
-        name: name,
-        number: number
-    };
-    request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status === 500) {
-            alert("name or phone number already exist.");
-        } else if (this.readyState == 4 && this.status == 200) {
-            object.gridData.push({name : name , number: number})
-        }
-    };
-    request.open("POST", server_prefix + path, true);
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(JSON.stringify(userObj));
+        var path = "/contacts";
+        var request = new XMLHttpRequest();
+        var userObj = {
+            name: name,
+            number: number
+        };
+        request.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status === 500) {
+                alert("name or phone number already exist.");
+            } else if (this.readyState == 4 && this.status == 200) {
+                object.gridData.push({name: name, number: number});
+            }
+        };
+        request.open("POST", server_prefix + path, true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify(userObj));
 }
 
 function getAllContactsFromServer() {
