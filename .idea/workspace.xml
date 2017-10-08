@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ae39967-c8ae-4ad6-9160-7a48e2b6c233" name="Default" comment="">
+    <list default="true" id="7ae39967-c8ae-4ad6-9160-7a48e2b6c233" name="Default" comment="Last Touches">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/functions.js" afterPath="$PROJECT_DIR$/static_data/functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/index.html" afterPath="$PROJECT_DIR$/static_data/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_data/style.css" afterPath="$PROJECT_DIR$/static_data/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static_data/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3200">
-              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="50">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static_data/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-125">
@@ -141,8 +139,8 @@
       <find>close</find>
       <find>vh</find>
       <find>documet</find>
-      <find>button</find>
       <find>demo</find>
+      <find>button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,9 +159,9 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/static_data/functions.js" />
         <option value="$PROJECT_DIR$/static_data/index.html" />
         <option value="$PROJECT_DIR$/static_data/style.css" />
+        <option value="$PROJECT_DIR$/static_data/functions.js" />
       </list>
     </option>
   </component>
@@ -305,7 +303,7 @@
       <workItem from="1507294031451" duration="28511000" />
       <workItem from="1507464643026" duration="622000" />
       <workItem from="1507465279265" duration="9774000" />
-      <workItem from="1507489461869" duration="8667000" />
+      <workItem from="1507489461869" duration="8728000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1507299631967</created>
@@ -482,11 +480,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507493694936</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Last Touches">
+      <created>1507499086109</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1507499086109</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53897000" />
+    <option name="totallyTimeSpent" value="53958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -853,14 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static_data/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3200">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static_data/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -875,6 +872,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-125">
           <caret line="153" column="20" lean-forward="false" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static_data/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
