@@ -1,4 +1,3 @@
-var server_prefix = "http://localhost:5000";
 var server_prefix = "http://mycontacts101.azurewebsites.net";
 
 // register the grid component

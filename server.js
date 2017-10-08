@@ -4,7 +4,7 @@ var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 var uri = "mongodb://dbublil:Dixnlj3zyJYd06R0@cluster0-shard-00-00-spckj.mongodb.net:27017,cluster0-shard-00-01-spckj.mongodb.net:27017,cluster0-shard-00-02-spckj.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
 var app = express();
-var defaultPort = process.env.port || 5000;
+var defaultPort = process.env.port || 1337;
 
 app.use(express.static('static_data'));
 app.use(bodyParser.json());
@@ -22,7 +22,6 @@ app.post('/contacts', function(req,res) {
                     }
                     else res.status(500).send("error");
                 }
-                console.log(JSON.stringify(contact));
                 res.status(200).send();
                 db.close();
             });

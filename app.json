@@ -1,8 +1,0 @@
-{
-  "name": "MyContacts",
-  "description": "Handle your contacts, to the maximum!",
-  "repository": "https://github.com/DanielBub/MyContacts.git",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
-  "image": "heroku/nodejs"
-}
