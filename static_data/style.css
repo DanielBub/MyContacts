@@ -25,6 +25,7 @@ th {
 
 #searchInput {
     width: 90%;
+    font-size: 26pt;
 }
 
 #container {
@@ -47,9 +48,6 @@ td {
     top: 5%;
 }
 
-.app_component {
-    /*margin-left: 25%;*/
-}
 
 #preload {
     position: fixed;
