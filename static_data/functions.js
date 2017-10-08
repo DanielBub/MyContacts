@@ -1,5 +1,6 @@
 var server_prefix = "http://mycontacts101.azurewebsites.net";
-
+server_prefix = "http://localhost:1337"
+// register the grid component
 Vue.component('grid', {
     template: '#grid-template',
     props: {

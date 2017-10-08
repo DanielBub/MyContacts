@@ -14,8 +14,7 @@
 
     <table>
         <thead>
-            <th v-for="key in columns"
-                :class="{ active: sortKey == key }">
+            <th v-for="key in columns">
                 {{ key | capitalize }}
             </th>
         </thead>
