@@ -26,7 +26,6 @@ body {
 #grid {
     overflow-y: auto;
     max-height: 82vh;
-    font-size: 5vh;
 }
 
 
@@ -90,7 +89,7 @@ body {
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
+    width: 50%;
     position: relative;
     transition: all 5s ease-in-out;
 }
@@ -130,17 +129,19 @@ body {
 .tooltip {
     position: relative;
     display: inline-block;
+    font-size: 4vh;
     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    background-color: black;
+    background-color: #107426;
     color: #fff;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
+    font-size: 2vh;
 
     /* Position the tooltip text - see examples below! */
     position: absolute;
