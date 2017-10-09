@@ -17,13 +17,12 @@ app.post('/contacts', function(req,res) {
             var contact = {name: req.body.name, number: req.body.number};
             db.collection("contacts").insertOne(contact, function (err) {
                 if (err) {
-                    if (err.code === 11000) {
-                        res.status(500).send("duplicate");
-                    }
-                    else res.status(400).send("error at db connection");
+                   res.status(400).send("error at db connection");
+                   console.log(err);
+                } else {
+                    res.status(200).send();
+                    db.close();
                 }
-                res.status(200).send();
-                db.close();
             });
         });
     } catch(err) {

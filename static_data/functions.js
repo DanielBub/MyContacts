@@ -95,9 +95,6 @@ function sendContactToServer(name,number, grid) {
                     case 400:
                         alert("Oops.. error in databse.");
                         break;
-                    case 500:
-                        alert("name or phone number already exist.");
-                        break;
                     default:
                         alert("Unkonwn error code..");
                         break;

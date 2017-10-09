@@ -1,4 +1,8 @@
-Contacts are added to table, after being validated to be put in DB,
-in alphabetical order.
+Contacts are added to the list in alphabetical order
+after being added to the MongoDB database.
 
-No duplicate contact name or phone number allowed.
+Just like in modern "contacts" mobile applications,
+duplicate names and numbers ARE allowed.
+
+Front-End: Vue.js
+Back-End: Node.jS(Express)
